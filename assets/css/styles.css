@@ -1,3 +1,73 @@
 *{
   box-sizing: border-box;
 }
+
+
+
+p{
+  cursor: pointer;
+}
+
+p::first-line{
+  background-color: lime;
+}
+
+p::selection{
+  color: crimson;
+  cursor: pointer;
+}
+
+button{
+  cursor: wait;
+}
+
+p{
+  position: relative;
+}
+
+p::before, p::after{
+  content: "";
+  background-color: brown;
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  border: 2px solid darkblue;
+  top: 20px;
+  left: 100px;
+}
+
+/*Styles for UL*/
+
+ul{
+  margin: 10px auto;
+  width: 80%;
+  text-align: center;
+}
+
+ul li::first-letter{
+  color: brown; 
+}
+
+li{
+  background-color: lightblue;
+  padding: 5px;
+  position: relative;
+  margin-top: 25px;
+}
+
+li::before{
+  content: open-quote;
+  position: absolute;
+  right: calc(100% + 5px);
+  font-size: 2em;
+  top: -0.4em;
+}
+
+li::after{
+  content: close-quote;
+  position: absolute;
+  left: calc(100% + 5px);
+  font-size: 2em;
+  bottom: -0.85em;
+}
