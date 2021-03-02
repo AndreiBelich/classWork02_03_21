@@ -38,6 +38,26 @@ body{
   transition-duration: 1s;
 }
 
+.list-item::before{
+  content: "";
+  display: block;
+  height: 0px;
+  width: 0%;
+  background-color: #000000;
+  position: absolute;
+  bottom: calc(100% + 3px);
+  right: 0;
+  /*transition: width 2s ease-in-out,
+              height 1.5s ease-in-out;*/
+  transition: all 2s ease-in-out;
+}
+
+.list-item:hover::before{
+  height: 3px;
+
+  width: calc(100% + 2px);
+}
+
 .list-item::after{
   content: "";
   display: block;
