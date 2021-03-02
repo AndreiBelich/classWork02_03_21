@@ -2,80 +2,102 @@
   box-sizing: border-box;
 }
 
-
-
-p{
-  cursor: pointer;
+body{
+  min-height: 200vh;
 }
 
-p::first-line{
+.page-header{
+  padding: 15px 15px;
+  position: fixed;
   background-color: lime;
+  right: 0;
+  left: 0;
+  top: 0;
+  height: 75px;
+  box-shadow: 6px 6px 8px 0px rgba(31, 3, 75, 0.7);
 }
 
-p::selection{
-  color: crimson;
-  cursor: pointer;
-}
-
-button{
-  cursor: wait;
-}
-
-p{
-  position: relative;
-}
-
-p::before, p::after{
-  content: "";
-  background-color: brown;
-  width: 20px;
-  height: 20px;
-  display: block;
-  position: absolute;
-  border: 2px solid darkblue;
-  top: 20px;
-  left: 100px;
-}
-
-/*Styles for UL*/
-
-ul{
-  margin: 10px auto;
-  width: 80%;
+.list{
+  font-size: 0;
   text-align: center;
 }
 
-ul li::first-letter{
-  color: brown; 
-}
-
-li{
-  background-color: lightblue;
-  padding: 5px;
+.list-item{
+  display: inline-block;
+  border: 1px solid black;
+  font-size: 20px;
   position: relative;
-  margin-top: 25px;
+  transition-property: all;
+  transition-duration: 1s;
 }
 
-/*li::before{
-  content: open-quote;
-  position: absolute;
-  right: calc(100% + 5px);
-  font-size: 2em;
-  top: -0.4em;
+.list-item:hover{
+  background-color: orange;
+  color: white;
+  transition-property: all;
+  transition-duration: 1s;
 }
 
-li::after{
-  content: close-quote;
+.list-item::after{
+  content: "";
+  display: block;
+  height: 0px;
+  width: 0%;
+  background-color: #000;
   position: absolute;
-  left: calc(100% + 5px);
-  font-size: 2em;
-  bottom: -0.85em;
-}*/
+  top: calc(100% + 3px);
+  transition: width 2s ease-in-out,
+              height 1.5s ease-in-out;
+}
 
-li::before{
-  content: url(../images/anchor.svg);
-  position: absolute;
-  right: calc(100% + 5px);
-  top: 0;
-  transform: scale(0.8);
+.list-item:hover::after{
+  height: 3px;
+  width: calc(100% + 2px);
+}
+
+.link{
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+.list-item + .list-item{
+  margin-left: 10px;
+}
+
+main{
+  padding-top: 85px;
+
+}
+
+.item{
+  width: 100%;
+  height: 100px;
+  background-color: black;
+  margin-top: 20px;
+}
+
+.item:hover{
+  width: 0%;
+}
+
+.linear{
+  transition: width 2s linear;
+}
+
+.ease{
+  transition: width 2s ease;
+}
+
+.ease-in{
+  transition: width 2s ease-in;
+}
+
+.ease-out{
+  transition: 2s width ease-out;
+}
+
+.ease-in-out{
+  transition: width 2s ease-in-out;
 }
